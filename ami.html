@@ -36,8 +36,12 @@
   </div>
 
   <script>
-    var parts = location.pathname.split('/').filter(Boolean);
-    var code = parts[parts.length - 1];
+    // Code passé en ?c=12345 (principal) ou en fin de chemin /ami/12345 (secours).
+    var code = new URLSearchParams(location.search).get('c');
+    if (!code) {
+      var parts = location.pathname.split('/').filter(Boolean);
+      code = parts[parts.length - 1];
+    }
     if (code && /^[0-9]{4,6}$/.test(code)) {
       document.getElementById('code').textContent = code;
     }
