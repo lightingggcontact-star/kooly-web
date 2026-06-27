@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kooly — Un proche t'invite</title>
+  <meta name="description" content="Un proche t'invite à le rejoindre sur Kooly. Télécharge l'app et entre son code ami.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <div class="logo">K</div>
+      <div class="brand">Kooly</div>
+    </header>
+
+    <section class="hero">
+      <div class="logo logo-xl">K</div>
+      <h1>Un proche t'invite<br>sur Kooly</h1>
+      <p>Avancez ensemble, en douceur. Télécharge l'app, puis ajoute ton proche avec son code ami.</p>
+
+      <div class="card" style="max-width:320px;margin:24px auto 0;text-align:center">
+        <p class="muted" style="margin:0 0 6px">Code ami</p>
+        <div id="code" style="font-size:34px;font-weight:800;letter-spacing:6px;color:var(--coral-dark)">—</div>
+      </div>
+
+      <a class="btn" href="#">Télécharger sur l'App Store</a>
+      <p class="muted" style="margin-top:14px">Ouvre l'app → onglet Famille → entre ce code.</p>
+    </section>
+
+    <nav class="foot">
+      <a href="/">Accueil</a>
+      <a href="/confidentialite">Confidentialité</a>
+      <a href="/support">Assistance</a>
+    </nav>
+  </div>
+
+  <script>
+    var parts = location.pathname.split('/').filter(Boolean);
+    var code = parts[parts.length - 1];
+    if (code && /^[0-9]{4,6}$/.test(code)) {
+      document.getElementById('code').textContent = code;
+    }
+  </script>
+</body>
+</html>
