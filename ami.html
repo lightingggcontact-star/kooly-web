@@ -5,30 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kooly — Un proche t'invite</title>
   <meta name="description" content="Un proche t'invite à le rejoindre sur Kooly. Télécharge l'app et entre son code ami.">
+  <link rel="icon" href="/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header class="site">
-      <div class="logo">K</div>
+  <div class="wrap legal" style="text-align:center;max-width:560px">
+    <header class="site" style="justify-content:center">
+      <div class="logo" style="background-image:url(/icon.png)"></div>
       <div class="brand">Kooly</div>
     </header>
 
-    <section class="hero">
-      <div class="logo logo-xl">K</div>
-      <h1>Un proche t'invite<br>sur Kooly</h1>
-      <p>Avancez ensemble, en douceur. Télécharge l'app, puis ajoute ton proche avec son code ami.</p>
+    <div class="hero-icon" style="background-image:url(/icon.png);margin:18px auto 22px"></div>
+    <h1 style="font-size:34px">Un proche t'invite sur Kooly</h1>
+    <p style="font-size:18px;color:var(--ink-700);max-width:420px;margin:14px auto 0">Avancez ensemble, en douceur. Télécharge l'app, puis ajoute ton proche avec son code ami.</p>
 
-      <div class="card" style="max-width:320px;margin:24px auto 0;text-align:center">
-        <p class="muted" style="margin:0 0 6px">Code ami</p>
-        <div id="code" style="font-size:34px;font-weight:800;letter-spacing:6px;color:var(--coral-dark)">—</div>
-      </div>
+    <div class="card" style="max-width:300px;margin:26px auto 0">
+      <p class="muted" style="margin:0 0 6px">Code ami</p>
+      <div id="code" style="font-family:Fredoka,sans-serif;font-size:38px;font-weight:700;letter-spacing:8px;color:var(--coral-dark)">—</div>
+    </div>
 
-      <a class="btn" href="#">Télécharger sur l'App Store</a>
-      <p class="muted" style="margin-top:14px">Ouvre l'app → onglet Famille → entre ce code.</p>
-    </section>
+    <div style="margin-top:26px">
+      <a class="btn" href="/">Télécharger sur l'App Store</a>
+    </div>
+    <p class="muted" style="margin-top:14px">Ouvre l'app → onglet Famille → entre ce code.</p>
 
-    <nav class="foot">
+    <nav class="foot" style="justify-content:center;text-align:center">
       <a href="/">Accueil</a>
       <a href="/confidentialite">Confidentialité</a>
       <a href="/support">Assistance</a>
@@ -36,7 +40,6 @@
   </div>
 
   <script>
-    // Code passé en ?c=12345 (principal) ou en fin de chemin /ami/12345 (secours).
     var code = new URLSearchParams(location.search).get('c');
     if (!code) {
       var parts = location.pathname.split('/').filter(Boolean);
